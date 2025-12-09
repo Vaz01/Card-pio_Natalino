@@ -102,3 +102,101 @@ p{
     justify-content: space-around;
 }
 
+header {
+     background-color: #1E131B;
+    position: sticky;  
+    top: 0;            
+    z-index: 1000;     
+    width: 100%;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* MENU DESKTOP */
+.nav-menu {
+    display: flex;
+    gap: 45px;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: rgb(211, 0, 0);
+}
+
+/* HAMBURGUER */
+.hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hamburguer {
+        display: block;
+    }
+
+ .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #1E131B;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+    }
+    
+    .nav-list {
+        margin: 16px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    /* ANIMAÇÃO X */
+    .hamburguer.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburguer.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburguer.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
